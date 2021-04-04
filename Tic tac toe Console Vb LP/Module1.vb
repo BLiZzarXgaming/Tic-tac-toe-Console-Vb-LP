@@ -22,7 +22,7 @@
             'boucle du jeu
             Do While ContinuerJeu = True
                 TableauAffichage.Tableau()
-                Dim ReponseJoueur As Integer
+                Dim ReponseJoueur As String
                 Dim ReponseValide As Boolean
                 ReponseValide = False
 
@@ -38,8 +38,8 @@
                             ReponseJoueur = vbEmpty
                             ReponseJoueur = Console.ReadLine()
 
-                            If ReponseJoueur = 1 Or 2 Or 3 Or 4 Or 5 Or 6 Or 7 Or 8 Or 9 Then
-                                TableauAffichage.ChangerSymboleTableau(ReponseJoueur, "X", 1)
+                            If ReponseJoueur = "1" Or ReponseJoueur = "2" Or ReponseJoueur = "3" Or ReponseJoueur = "4" Or ReponseJoueur = "5" Or ReponseJoueur = "6" Or ReponseJoueur = "7" Or ReponseJoueur = "8" Or ReponseJoueur = "9" Then
+                                TableauAffichage.ChangerSymboleTableau(Convert.ToInt32(ReponseJoueur), "X", 1)
                                 If TableauAffichage.ChoixJoueur1DejaPrit = True Then
                                     TourJoueurUN = False
                                     ReponseValide = True
@@ -74,8 +74,8 @@
                             ReponseJoueur = vbEmpty
                             ReponseJoueur = Console.ReadLine()
 
-                            If ReponseJoueur = 1 Or 2 Or 3 Or 4 Or 5 Or 6 Or 7 Or 8 Or 9 Then
-                                TableauAffichage.ChangerSymboleTableau(ReponseJoueur, "O", 2)
+                            If ReponseJoueur = "1" Or ReponseJoueur = "2" Or ReponseJoueur = "3" Or ReponseJoueur = "4" Or ReponseJoueur = "5" Or ReponseJoueur = "6" Or ReponseJoueur = "7" Or ReponseJoueur = "8" Or ReponseJoueur = "9" Then
+                                TableauAffichage.ChangerSymboleTableau(Convert.ToInt32(ReponseJoueur), "O", 2)
                                 If TableauAffichage.ChoixJoueur2DejaPrit = True Then
                                     TourJoueurUN = True
                                     ReponseValide = True
