@@ -116,11 +116,12 @@
             Console.WriteLine("Si oui peser sur o sinon peser sur n")
 
             Dim ReponsePourContinuerLeJeu As String = ""
-            ReponsePourContinuerLeJeu = Console.ReadLine()
+
             Do Until ReponsePourContinuerLeJeu = "o" Or ReponsePourContinuerLeJeu = "n"
                 ReponsePourContinuerLeJeu = vbEmpty
                 ReponsePourContinuerLeJeu = Console.ReadLine()
-                If ReponsePourContinuerLeJeu = "o" Or "n" Then
+                If ReponsePourContinuerLeJeu = "o" Or ReponsePourContinuerLeJeu = "n" Then
+                Else
                     Console.WriteLine("le charactere n'est pas valide recommence")
                 End If
             Loop
