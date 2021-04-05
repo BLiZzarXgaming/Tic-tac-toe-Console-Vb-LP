@@ -233,6 +233,7 @@
             Module1.JoueurVictoire2 = True
 
         ElseIf CasePriseTotal = 9 Then
+            Module1.ConditionDeVictoire = True
             Module1.MatchNullBool = True
         End If
 
