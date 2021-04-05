@@ -7,6 +7,52 @@
     Public JoueurVictoire2 As Boolean
     Sub Main()
 
+        Dim NomJoueur1 As String
+        Dim NomJoueur2 As String
+
+
+        Console.WriteLine("Bienvenue sur le jeu Tic Tac Toe de LP!!!")
+        Console.WriteLine("Pour commencer, je vais prendre vos nom")
+        Console.WriteLine("Joueur 1 taper votre nom:")
+
+        'choix nom joueur 1
+        Dim NomJoueur1ValidationNom As Boolean = False
+        Do Until NomJoueur1ValidationNom = True
+            NomJoueur1 = Console.ReadLine()
+            Console.WriteLine("Votre nom est: " & NomJoueur1)
+            Console.WriteLine("Est-ce correct? si oui taper o sinon sur n")
+            Dim reponseutilisateur As String = Console.ReadLine()
+            If reponseutilisateur = "o" Then
+                NomJoueur1ValidationNom = True
+            ElseIf reponseutilisateur = "n" Then
+                Console.WriteLine("réécrit le!")
+            Else
+                Console.WriteLine("ce n'est pas dans les choix! recommence")
+            End If
+
+
+        Loop
+
+        'choix nom joueur 2
+        Console.WriteLine("Joueur 2 taper votre nom:")
+        Dim NomJoueur2ValidationNom As Boolean = False
+        Do Until NomJoueur2ValidationNom = True
+            NomJoueur2 = Console.ReadLine()
+            Console.WriteLine("Votre nom est: " & NomJoueur2)
+            Console.WriteLine("Est-ce correct? si oui taper o sinon sur n")
+            Dim reponseutilisateur As String = Console.ReadLine()
+            If reponseutilisateur = "o" Then
+                NomJoueur2ValidationNom = True
+            ElseIf reponseutilisateur = "n" Then
+                Console.WriteLine("réécrit le!")
+            Else
+                Console.WriteLine("ce n'est pas dans les choix! recommence")
+            End If
+
+
+        Loop
+
+
 
         Do Until ConditionDeVictoire = True
 
@@ -31,7 +77,7 @@
                     ReponseValide = False
                     ReponseJoueur = vbEmpty
                     If TourJoueurUN = True Then
-                        Console.WriteLine("C'est au tour du joueur 1 de jouer")
+                        Console.WriteLine("C'est au tour de " & NomJoueur1 & " de jouer")
                         Console.WriteLine("Veuillez écrire le numéro de la case choisi")
 
                         Do Until ReponseValide = True
@@ -67,7 +113,7 @@
                     ReponseValide = False
                     ReponseJoueur = vbEmpty
                     If TourJoueurUN = False Then
-                        Console.WriteLine("C'est au tour du joueur 2 de jouer")
+                        Console.WriteLine("C'est au tour de " & NomJoueur2 & " de jouer")
                         Console.WriteLine("Veuillez écrire le numéro de la case choisi")
 
                         Do Until ReponseValide = True
@@ -103,15 +149,15 @@
             If MatchNullBool = True Then
                 Console.WriteLine("match nulle :(")
             ElseIf JoueurVictoire1 = True Then
-                Console.WriteLine("Le joueur 1 à gagné!!! ")
+                Console.WriteLine(NomJoueur1 & " à gagné!!! ")
             Else
-                Console.WriteLine("Le joueur 2 à gagné!!! ")
+                Console.WriteLine(NomJoueur2 & " à gagné!!! ")
 
             End If
 
             Console.WriteLine("Voici les scores")
-            Console.WriteLine("Joueur 1: " + ScoreJoueurUn.ToString(ScoreJoueurUn))
-            Console.WriteLine("Joueur 2: " + ScoreJoueurDeux.ToString(ScoreJoueurDeux))
+            Console.WriteLine(NomJoueur1 & ":   " & ScoreJoueurUn.ToString(ScoreJoueurUn))
+            Console.WriteLine(NomJoueur2 & ": " & ScoreJoueurDeux.ToString(ScoreJoueurDeux))
             Console.WriteLine("Voulez-vous continuer?")
             Console.WriteLine("Si oui peser sur o sinon peser sur n")
 
